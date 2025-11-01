@@ -17,15 +17,15 @@ class TopMonthSpendings(Generator):
         graphUrl = pie.printGraph(debits)
 
         self.replace = {
-            'first_spending' : str(debits.iloc[0]['Libell�']),
+            'first_spending' : str(debits.iloc[0]['Libellé']),
             'first_spending_amount': str(abs(debits.iloc[0]['Montant'])),
-            'second_spending' : str(debits.iloc[1]['Libell�']),
+            'second_spending' : str(debits.iloc[1]['Libellé']),
             'second_spending_amount': str(abs(debits.iloc[1]['Montant'])),
-            'third_spending' : str(debits.iloc[2]['Libell�']),
+            'third_spending' : str(debits.iloc[2]['Libellé']),
             'third_spending_amount': str(abs(debits.iloc[2]['Montant'])),
-            'fourth_spending' : str(debits.iloc[3]['Libell�']),
+            'fourth_spending' : str(debits.iloc[3]['Libellé']),
             'fourth_spending_amount': str(abs(debits.iloc[3]['Montant'])),
-            'fifth_spending' : str(debits.iloc[4]['Libell�']),
+            'fifth_spending' : str(debits.iloc[4]['Libellé']),
             'fifth_spending_amount': str(abs(debits.iloc[4]['Montant'])),
             'chart_url': graphUrl
         }
