@@ -9,20 +9,24 @@ class CumulativeBalanceTrend():
         graphPath = './hello/graphs/CumulativeBalanceTrend.png'
         displayPath = './graphs/CumulativeBalanceTrend.png'
 
-        x = dataFrame['Date']
-        y = dataFrame['Solde']
+        data = dataFrame.copy()
+        data['Date'] = pd.to_datetime(data['Date'], dayfirst=True, format="mixed")
+        data = data.sort_values('Date')
 
-        plt.style.use('_mpl-gallery')
-        plt.subplots_adjust(left=0.2,bottom=0.2, top = 0.9, right = 0.9)
+        trend = data.groupby('Date')['Solde'].last().reset_index()
 
-        fig, ax = plt.subplots()
+        plt.figure(figsize=(8, 4))
+        plt.plot(trend['Date'], trend['Solde'], linewidth=2)
+        plt.fill_between(trend['Date'], trend['Solde'], alpha=0.2)
+        plt.title("Évolution du solde cumulé")
+        plt.xlabel("Date")
+        plt.ylabel("Solde (CHF)")
+        plt.grid(True)
 
-        ax.set_xlabel('Date')
-        ax.set_ylabel('Balance')
+        plt.xticks(rotation=45, ha='right')
+        plt.gcf().autofmt_xdate()
 
-
-        fig.set_size_inches(10,6)
-        ax.plot(x, y)
         plt.savefig(graphPath)
+
 
         return displayPath
