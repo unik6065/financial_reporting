@@ -4,9 +4,14 @@ from core.report_name_mapper import ReportNameMapper
 
 class GeneratorPlanner():
     plannedStubs = []
+    stubs = []
 
     def __init__(self):
-        self.stubs = sorted(GENERATORS)
+        stubs = sorted(GENERATORS.items(), key=lambda item:item[1])
+
+        for stub in stubs:
+            self.stubs.append(stub[0])
+            
         self.args = Arguments().getArgs()
         self.mapper = ReportNameMapper()
 
