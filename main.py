@@ -24,8 +24,8 @@ mapper = ReportNameMapper()
 #         print('\
 
 try:
-    os.mkdir('/usr/src/app/hello')
-    os.mkdir('/usr/src/app/hello/graphs')
+    os.mkdir(f'{os.getcwd()}/hello')
+    os.mkdir(f'{os.getcwd()}/hello/graphs') 
 except:
     print('folder /hello already exists')
 
