@@ -15,18 +15,20 @@ class CumulativeBalanceTrend():
 
         trend = data.groupby('Date')['Solde'].last().reset_index()
 
-        plt.figure(figsize=(8, 4))
-        plt.plot(trend['Date'], trend['Solde'], linewidth=2)
-        plt.fill_between(trend['Date'], trend['Solde'], alpha=0.2)
-        plt.title("Évolution du solde cumulé")
-        plt.xlabel("Date")
-        plt.ylabel("Solde (CHF)")
-        plt.grid(True)
+        fig, ax = plt.subplots(figsize=(10, 5))
 
-        plt.xticks(rotation=45, ha='right')
-        plt.gcf().autofmt_xdate()
+        ax.plot(trend['Date'], trend['Solde'], linewidth=2)
+        ax.fill_between(trend['Date'], trend['Solde'], alpha=0.2)
+        ax.set_title("Évolution du solde cumulé")
+        ax.set_xlabel("Date")
+        ax.set_ylabel("Solde (CHF)")
+        ax.grid(True)
 
-        plt.savefig(graphPath)
+        fig.autofmt_xdate()
+        fig.tight_layout()
+
+        fig.savefig(graphPath, bbox_inches="tight")
+        plt.close(fig)
 
 
         return displayPath
