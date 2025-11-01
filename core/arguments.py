@@ -6,7 +6,7 @@ class Arguments:
 
     def __init__(self):
         parser = argparse.ArgumentParser(prog="financial analysis", description='Analyse a file and give back a resume',)
-        parser.add_argument("financial_file", help="The path of the file that need to be analysed.", type=argparse.FileType('r', encoding='utf-8'))
+        parser.add_argument("financial_file", help="The path of the file that need to be analysed.", type=argparse.FileType('r', encoding='latin1'))
         parser.add_argument("--O", help="generate only one specific report part.", type=str)
         self.args = parser.parse_args()
 
