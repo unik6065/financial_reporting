@@ -4,7 +4,7 @@ import re
 class Generator:
 
     def __init__(self, stubName=None):
-        self.stubName = stubName if stubName else self.__class__.__name__
+        self.stubName = stubName if stubName else self.name
         self.stubName = self.to_snake_case(self.stubName)
         self.p = Path(f'./stubs/{self.stubName}.md')
         self.stub = open(self.p).read()
