@@ -17,8 +17,8 @@ class Spendings(Generator):
         totatlDeb = debits['Montant'].sum()
 
         self.replace = {
-            'spent_amount' : str(abs(totatlDeb)),
-            'spent_mean_per_month': str(abs(totatlDeb // nbMonth))
+            'spent_amount' : str(abs(round(totatlDeb, 2))),
+            'spent_mean_per_month': str(abs(round(totatlDeb // nbMonth, 2)))
             }
 
         self.replaceStub()
