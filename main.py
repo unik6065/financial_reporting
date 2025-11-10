@@ -5,12 +5,16 @@ from generatorLoader import GeneratorLoader
 from core.arguments import Arguments
 from core.report_name_mapper import ReportNameMapper
 from core.generator_planner import GeneratorPlanner
+from importer.bcn_importer import BCNImporter
 
 
 arguments = Arguments()
 arguments = arguments.getArgs()
 
-financial = pd.read_csv(arguments.financial_file, sep=';', header=11)
+importer = BCNImporter(arguments.financial_file)
+
+financial = importer.load()
+
 mapper = ReportNameMapper()
 
 # credits = financial[financial['Montant'] > 0]

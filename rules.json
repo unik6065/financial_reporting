@@ -1,0 +1,35 @@
+{
+  "Courses alimentaires": [
+    "migros",
+    "coop",
+    "aldi",
+    "lidl",
+    "otto's",
+    "e.leclerc",
+    "denner",
+    "carrefour",
+    "boulangerie",
+    "landi"
+  ],
+  "Abonnements": [
+    "spotify",
+    "netflix",
+    "dropbox",
+    "apple",
+    "nespresso",
+    "linsenmax.ch"
+  ],
+  "Factures / virements": [
+    "mobile banking",
+    "facture",
+    "virement",
+    "ordre permanent"
+  ],
+  "Meubles": ["jysk", "ikea", "casa"],
+  "Restauration / Hotel": ["rest.", "restaurant", "mcdonalds", "hotel"],
+  "Essence": ["tamoil", "socar", "grenacher"],
+  "Chien": ["maxi zoo", "qualipet"],
+  "Pharmacie": ["pharmacie"],
+  "Hotel": ["hotel"],
+  "Crédit": ["crédit"]
+}
