@@ -9,10 +9,10 @@ class TopMonthSpendings(Generator):
 
     def generate(self, dataFrame: pd.DataFrame):
 
-        dataFrame['Date'] = pd.to_datetime(dataFrame['Date'], dayfirst=True, format='mixed')
+        # dataFrame['Date'] = pd.to_datetime(dataFrame['Date'], dayfirst=True, format='mixed')
         debits = dataFrame[dataFrame['Montant'] < 0]
 
-        debits = debits[debits['Date'].dt.month == debits['Date'].head(1).item().month]
+        debits = debits[debits.Month == debits.Month.tail(1).item()]
         
         debits = debits.sort_values('Montant').head(5)
 

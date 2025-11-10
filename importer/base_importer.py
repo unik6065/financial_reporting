@@ -9,9 +9,9 @@ class BaseImporter:
         raise NotImplementedError('Subclasses must implement load_raw()')
     
     def preprocess(self, df: pd.DataFrame) -> pd.DataFrame:
-        # df['Date'] = pd.to_datetime(df['Date'], dayfirst=True, errors='coerce')
-        # df = df.dropna(subset=['Date'])
-        # df = df.sort_values('Date')
+        df['Date'] = pd.to_datetime(df['Date'], dayfirst=True, format="mixed")
+        df = df.dropna(subset=['Date'])
+        df = df.sort_values('Date')
         return df
 
     

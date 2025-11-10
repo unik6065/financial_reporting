@@ -9,8 +9,7 @@ class BalanceByMonths(Generator):
     def generate(self, dataFrame: pd.DataFrame):
 
         months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
-
-        dataFrame['Date'] = pd.to_datetime(dataFrame['Date'], dayfirst=True, format="mixed")
+    
         nbMonths = len(dataFrame.groupby(dataFrame.Date.dt.month))
         spendings = dataFrame[dataFrame['Montant'] < 0]
         earnings = dataFrame[dataFrame['Montant'] > 0]

@@ -15,7 +15,7 @@ class BCNImporter(BaseImporter):
     
     def preprocess(self, df: pd.DataFrame) -> pd.DataFrame:
         df = super().preprocess(df)
-        df['Categorie'] = df['Libellé'].apply(categorize_transaction)
-        # df['Mois'] = df['Date'].dt.month
-        # df['Annee'] = df['Date'].dt.year
+        df['Category'] = df['Libellé'].apply(categorize_transaction)
+        df['Month'] = df['Date'].dt.month
+        df['Year'] = df['Date'].dt.year
         return df
