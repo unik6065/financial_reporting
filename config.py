@@ -4,5 +4,6 @@ GENERATORS = {
     'spendings': 102,
     'topMonthSpendings': 103,
     'cumulativeBalanceTrend': 104,
-    'balanceByMonths': 105
+    'balanceByMonths': 105,
+    'spendingsByCategories': 106
 }
