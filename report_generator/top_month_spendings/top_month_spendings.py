@@ -12,7 +12,7 @@ class TopMonthSpendings(Generator):
         # dataFrame['Date'] = pd.to_datetime(dataFrame['Date'], dayfirst=True, format='mixed')
         debits = dataFrame[dataFrame['Montant'] < 0]
 
-        debits = debits[debits.Month == debits.Month.tail(1).item()]
+        debits = debits[debits.Month == debits.Month.head(1).item()]
         
         debits = debits.sort_values('Montant').head(5)
 

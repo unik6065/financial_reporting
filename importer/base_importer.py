@@ -11,7 +11,7 @@ class BaseImporter:
     def preprocess(self, df: pd.DataFrame) -> pd.DataFrame:
         df['Date'] = pd.to_datetime(df['Date'], dayfirst=True, format="mixed")
         df = df.dropna(subset=['Date'])
-        df = df.sort_values('Date')
+        df = df.sort_values('Date', ascending=False)
         return df
 
     
