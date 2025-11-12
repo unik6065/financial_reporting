@@ -6,5 +6,6 @@ GENERATORS = {
     'cumulativeBalanceTrend': 104,
     'balanceByMonths': 105,
     'spendingsByCategories': 106,
-    'earnings': 107
+    'earnings': 107,
+    'balanceEvolution': 108
 }
