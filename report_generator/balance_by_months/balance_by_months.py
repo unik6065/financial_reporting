@@ -1,6 +1,7 @@
 from report_generator.generator import Generator
 from .bar import BalanceByMonthsBar
 import pandas as pd
+import calendar
 
 class BalanceByMonths(Generator):
 
@@ -21,6 +22,7 @@ class BalanceByMonths(Generator):
         plotUrl = plot.printGraph(dataFrame)
 
         self.replace = {
+            'table' : self.generateTable(spendings),
             'nb_months' : str(nbMonths),
             'worst_month' : months[spendSorted.head(1).keys()[0] - 1],
             'worst_month_spent': str(abs(spendSorted.head(1).item())),
@@ -34,3 +36,17 @@ class BalanceByMonths(Generator):
         self.replaceStub()
 
         return self.stub
+    
+    def generateTable(self, dataFrame: pd.DataFrame) -> str: 
+
+        trendSpending = dataFrame.groupby(dataFrame.Date.dt.month)['Montant'].sum()
+
+
+        markdown_lines = ["| Mois | Montant |", "|:-----------|-----------:|"]
+
+
+        for month, amount in trendSpending.items():
+            month_name = calendar.month_name[int(month)] 
+            markdown_lines.append(f"| {month_name} | {amount:.2f} |")
+
+        return "\n".join(markdown_lines)

@@ -11,4 +11,6 @@ La moyenne mensuelle des revenus est de **{{avg_earning}} CHF**, tandis que la m
 
 Ce bilan vous permet de visualiser les fluctuations de votre équilibre financier au fil de l’année, de repérer les périodes à forte dépense, et d’identifier les mois les plus équilibrés. Les traitillé indiquent respectivement la moyenne des dépenses et des revenus.
 
+{{table}}
+
 ![balance_by_months]({{graph_url}})
