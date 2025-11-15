@@ -26,7 +26,13 @@
     "ordre permanent"
   ],
   "Meubles": ["jysk", "ikea", "casa"],
-  "Restauration / Hotel": ["rest.", "restaurant", "mcdonalds", "hotel"],
+  "Restauration / Hotel": [
+    "rest.",
+    "restaurant",
+    "mcdonalds",
+    "hotel",
+    "www.felfel.ch"
+  ],
   "Essence": ["tamoil", "socar", "grenacher"],
   "Chien": ["maxi zoo", "qualipet", "veterinaire"],
   "Pharmacie": ["pharmacie"],
