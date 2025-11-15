@@ -34,8 +34,6 @@ class BalanceEvolution(Generator):
         delta_6m_percent = (delta_6m_value / balance_6m) * 100
         delta_6m_trend = '↑'if delta_6m_value > 0 else '↓'
 
-        print(pd.to_datetime(now, format='%Y-%m-%d'))
-
 
         self.replace = {
             'date': str(pd.to_datetime(now, format='%Y-%m-%d')),
