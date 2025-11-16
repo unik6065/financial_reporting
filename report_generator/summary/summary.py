@@ -27,7 +27,7 @@ class Summary(Generator):
             'delta_sign': "Positif" if diff > 0 else "Négatif",
             'delta_value' : str(diff),
             'final_balance': str(final_balance),
-            'balance_percent': str((final_balance - initial_balance) / initial_balance * 100),
+            'balance_percent': str(round((final_balance - initial_balance) / initial_balance * 100, 2)),
             'transaction_count': str(nb_transactions),
             'earning_count': str(nb_transactins_earning),
             'spending_count': str(nb_transactions_spending),

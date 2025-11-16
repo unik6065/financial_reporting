@@ -21,7 +21,7 @@ class Heading(Generator):
             'ending_balance' : str(last_transaction['Solde'].item()),
             'trend_direction': trend_direction,
             'balance_delta': str(last_transaction['Solde'].item() - first_transaction['Solde'].item()),
-            'balance_percent': str(((last_transaction['Solde'].item() - first_transaction['Solde'].item())/ first_transaction['Solde'].item())* 100),
+            'balance_percent': str(round(((last_transaction['Solde'].item() - first_transaction['Solde'].item())/ first_transaction['Solde'].item())* 100, 2)),
             'graph_url': plotUrl
             }
 
