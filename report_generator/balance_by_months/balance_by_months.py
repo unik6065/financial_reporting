@@ -14,6 +14,8 @@ class BalanceByMonths(Generator):
         nbMonths = len(dataFrame.groupby(dataFrame.Date.dt.month))
         spendings = dataFrame[dataFrame['Montant'] < 0]
         earnings = dataFrame[dataFrame['Montant'] > 0]
+        nbMonthsEarnings = len(earnings.groupby(earnings.Date.dt.month))
+        nbMonthsSpendings = len(spendings.groupby(spendings.Date.dt.month))
         spendSorted = spendings.groupby(spendings.Date.dt.month)['Montant'].sum().sort_values()
         earningsSorted = earnings.groupby(earnings.Date.dt.month)['Montant'].sum().sort_values()
 
@@ -28,8 +30,8 @@ class BalanceByMonths(Generator):
             'worst_month_spent': str(abs(spendSorted.head(1).item())),
             'best_month': months[earningsSorted.tail(1).keys()[0] - 1],
             'best_month_earned': str(earningsSorted.tail(1).item()),
-            'avg_earning': str(earningsSorted.sum() // nbMonths),
-            'avg_spending': str(abs(spendSorted.sum() // nbMonths)),
+            'avg_earning': str(earningsSorted.sum() // nbMonthsEarnings),
+            'avg_spending': str(abs(spendSorted.sum() // nbMonthsSpendings)),
             'graph_url': plotUrl
             }
 
