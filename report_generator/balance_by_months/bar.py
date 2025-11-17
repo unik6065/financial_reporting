@@ -14,19 +14,20 @@ class BalanceByMonthsBar():
         data = data.sort_values('Date')
 
         spendings = data[data['Montant'] < 0]
-        earning = data[data['Montant'] > 0]
-        nbMonths = len(dataFrame.groupby(dataFrame.Date.dt.month))
+        nbMonthsSpendings = len(spendings.groupby(spendings.Date.dt.month))
+        earnings = data[data['Montant'] > 0]
+        nbMonthsEarnings = len(earnings.groupby(earnings.Date.dt.month))
 
 
         trendSpending = spendings.groupby(spendings.Date.dt.month)['Montant'].sum()
-        trendEarning = earning.groupby(earning.Date.dt.month)['Montant'].sum()
+        trendEarning = earnings.groupby(earnings.Date.dt.month)['Montant'].sum()
 
         months = np.arange(1, 13)
         trendSpending = trendSpending.reindex(months, fill_value=0)
         trendEarning = trendEarning.reindex(months, fill_value=0)
 
-        spendAvg = abs(trendSpending.sum())/nbMonths 
-        earnAvg = trendEarning.sum()/nbMonths 
+        spendAvg = abs(trendSpending.sum())/nbMonthsSpendings 
+        earnAvg = trendEarning.sum()/nbMonthsEarnings 
         
         fig, ax = plt.subplots(figsize=(10, 5))
 
