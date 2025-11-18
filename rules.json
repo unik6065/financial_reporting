@@ -9,7 +9,8 @@
     "denner",
     "carrefour",
     "boulangerie",
-    "landi"
+    "landi",
+    "sauser"
   ],
   "Abonnements": [
     "spotify",
@@ -17,7 +18,8 @@
     "dropbox",
     "apple",
     "nespresso",
-    "linsenmax.ch"
+    "linsenmax.ch",
+    "tcs"
   ],
   "Factures / virements": [
     "mobile banking",
@@ -31,9 +33,20 @@
     "restaurant",
     "mcdonalds",
     "hotel",
-    "www.felfel.ch"
+    "www.felfel.ch",
+    "burker",
+    "boulangerie",
+    "donald"
   ],
-  "Essence": ["tamoil", "socar", "grenacher"],
+  "Essence": [
+    "tamoil",
+    "socar",
+    "grenacher",
+    "station",
+    "bp",
+    "eni",
+    "service"
+  ],
   "Chien": ["maxi zoo", "qualipet", "veterinaire"],
   "Pharmacie": ["pharmacie"],
   "Hotel": ["hotel"],
