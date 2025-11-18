@@ -12,8 +12,8 @@ class Heading(Generator):
 
 
         self.replace = {
-            'first_day' : str(pd.Timestamp(first_transaction['Date'].item())),
-            'last_day': str(pd.Timestamp(last_transaction['Date'].item())),
+            'first_day' : str(pd.Timestamp(first_transaction['Date'].item()).strftime('%d-%m-%Y')),
+            'last_day': str(pd.Timestamp(last_transaction['Date'].item()).strftime('%d-%m-%Y')),
             'starting_balance': str(first_transaction['Solde'].item()),
             'final_balance': str(last_transaction['Solde'].item())
             }

@@ -36,7 +36,7 @@ class BalanceEvolution(Generator):
 
 
         self.replace = {
-            'date': str(pd.to_datetime(now, format='%Y-%m-%d')),
+            'date': str(now.strftime('%d-%m-%Y')),
             'delta_1m_value' : str(abs(round(delta_1m_value, 2))),
             'delta_1m_percent': str(abs(round(delta_1m_percent, 2))),
             'delta_1m_trend': delta_1m_trend,
