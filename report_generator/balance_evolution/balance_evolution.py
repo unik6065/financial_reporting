@@ -16,10 +16,10 @@ class BalanceEvolution(Generator):
         one_year_ago = now - pd.DateOffset(years=1)
 
         current_balance = df[df['Date'] == now]['Solde'].iloc[0]
-        balance_1m = df[df['Date'] <= one_month_ago]['Solde'].iloc[1]
-        balance_3m = df[df['Date'] <= three_months_ago]['Solde'].iloc[1]
-        balance_6m = df[df['Date'] <= six_months_ago]['Solde'].iloc[1]
-        # balance_1y = df[df['Date'] <= one_year_ago]['Solde'].iloc[1]
+        balance_1m = df[df['Date'] <= one_month_ago]['Solde'].iloc[0]
+        balance_3m = df[df['Date'] <= three_months_ago]['Solde'].iloc[0]
+        balance_6m = df[df['Date'] <= six_months_ago]['Solde'].iloc[0]
+        # balance_1y = df[df['Date'] <= one_year_ago]['Solde'].iloc[0]
 
 
         delta_1m_value = current_balance - balance_1m
